@@ -9,6 +9,7 @@
 #include <signal.h>
 #include "types.h"
 #include "platform.h"
+#include "file.h"
 
 // clang-format off
 #define and &&
@@ -164,6 +165,10 @@ EXPORT Array *chars(string s) {
   a->count = strlen(s);
   a->data = strdup(s);
   return a;
+}
+
+EXPORT Array *globb(string pattern) {
+  return carp_file_glob(pattern);
 }
 
 EXPORT string string_join(string separator, Array *array_of_strings) {

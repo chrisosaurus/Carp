@@ -53,3 +53,6 @@
 (register-builtin "nullQMARK" '((:ref :any)) :bool)
 (register-builtin "not" '(:bool) :bool)
 
+;; File
+(register-builtin "globb" '((:ref :string)) '(:Array :string))
+
