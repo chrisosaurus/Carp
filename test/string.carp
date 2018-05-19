@@ -197,6 +197,11 @@
                   &(split-by "erikmsvedlhejxfoo" &[\m \l \x])
                   "split-by works correctly"
     )
+    (assert-equal test
+                  "hello there Jennifier"
+                  &(append-refs "hello there " "Jennifier")
+                  "append-refs works correctly"
+    )
     (print-test-results test)
   )
 )
