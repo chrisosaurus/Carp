@@ -4,6 +4,7 @@
 
   (register =          (Fn [&String &String] Bool))
   (register append     (Fn [String String] String)) ;; TODO: should take &String:s
+  (register append-refs(Fn [&String &String] String))
   (register delete     (Fn [String] ()))
   (register copy       (Fn [&String] String))
   (register count      (Fn [&String] Int))
