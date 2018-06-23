@@ -1,0 +1,15 @@
+(use Broken)
+
+(load "Test.carp")
+(use Test)
+
+(defn main []
+  (with-test test
+    (assert-equal test
+                  0
+                  (Broken.countdown 10)
+                 "countdown works"
+    )
+
+    (print-test-results test)))
+
