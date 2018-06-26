@@ -1,0 +1,20 @@
+(use Char)
+
+(load "Test.carp")
+(use Test)
+
+(defn main []
+  (with-test test
+    (assert-equal test
+                  0
+                  (meaning \0)
+                  "Char meaning works as expected I")
+
+    (assert-equal test
+                  0
+                  (meaning &\0)
+                  "Char meaning works as expected II")
+
+    (print-test-results test)
+  )
+)
