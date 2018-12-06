@@ -1,0 +1,13 @@
+(defn hash-comparison [a b]
+  (< (hash a)
+     (hash b)))
+
+(defn main []
+  (let [expected (Array.copy-map &(fn [i] (str @i)) &(Array.range 100 200 1))
+        ;; shuffle input by sorting by hash:
+        in (Array.sort-by @&expected &hash-comparison)]
+    (do
+     (let [out (Array.sort in)]
+       (do
+        (println* &out)
+        (println* (= &out &expected)))))))
