@@ -3,7 +3,7 @@
      (hash b)))
 
 (defn main []
-  (let [expected (Array.copy-map &(fn [i] (str @i)) &(Array.range 100 200 1))
+  (let [expected (Array.copy-map &(fn [i] (str @i)) &(Array.range 110 136 1))
         ;; shuffle input by sorting by hash:
         in (Array.sort-by @&expected &hash-comparison)]
     (do
