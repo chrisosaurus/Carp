@@ -1,13 +1,13 @@
-(defn hash-comparison [a b]
-  (< (hash a)
-     (hash b)))
-
 (defn main []
-  (let [expected (Array.copy-map &(fn [i] (str @i)) &(Array.range 110 136 1))
-        ;; shuffle input by sorting by hash:
-        in (Array.sort-by @&expected &hash-comparison)]
+  (let [in   [20 0 10 21 11 1 2 22 12 24 23 13 3 14 4 25 5 15 16 6 17 7 8 18 19 9]
+        exp  (Array.range 0 25 1)
+        heap (Array.copy &in)
+        out  (Array.sorted &in)]
     (do
-     (let [out (Array.sort in)]
-       (do
-        (println* &out)
-        (println* (= &out &expected)))))))
+      (MaxHeap.heapify! &heap)
+
+      (println* "in:   " &in)
+      (println* "heap: " &heap)
+      (println* "exp:  " &exp)
+      (println* "out:  " &out)
+      (println* "(= out exp): " (= &out &exp)))))
